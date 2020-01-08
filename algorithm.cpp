@@ -41,13 +41,42 @@ void selection_sort(vector<V> arr){
    } 
 }
 
+
+/*
+ 插入排序
+  by skyliqf
+  2020.01.07
+*/
+template <typename S>
+void insert_sort(S *arr,int len){
+     int j;
+     float key;
+     for(int i=1;i<len;i++){
+         j=i-1;
+         key=arr[i];
+	 while(j>=0&&key<arr[j]){
+	    arr[j+1]=arr[j];
+	    j--;
+	 }
+	 arr[j+1]=key;
+     
+     }
+   cout<<endl<<"insert_sort"<<endl;
+   for(int i=0;i<len;i++){
+     cout<<arr[i]<<endl;
+   }
+
+
+
+}
+
 int main(){
    float arr[10]={9.4,1.7,4.5,6.7,4.7,8.7,9.8,2.4,7.1,2.6};
    vector<float> arrv={9.4,9.6,4.5,6.7,4.7,8.7,9.8,2.8,7.9,2.6};
    int len = (int) sizeof(arr) / sizeof(*arr);
    bubble_sort(arr,len);
    selection_sort(arrv);
-
+   insert_sort(arr,len);
    return 0;
   
 
